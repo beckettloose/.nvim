@@ -54,6 +54,8 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 -- Decrease update time
+-- Update Time: time before CursorHold autocmds are executed.
+-- Also technically a timer for writing swapfile but that's disabled here
 vim.opt.updatetime = 50 -- old value: 250
 
 -- Decrease mapped sequence wait time

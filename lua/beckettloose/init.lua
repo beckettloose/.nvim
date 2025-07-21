@@ -18,6 +18,7 @@ end
 --     }
 -- })
 
+-- Highlight selection on yank
 autocmd("TextYankPost", {
     group = yank_group,
     pattern = "*",
@@ -29,6 +30,7 @@ autocmd("TextYankPost", {
     end,
 })
 
+-- Remove trailing whitespaces before writing buffer
 autocmd({ "BufWritePre" }, {
     group = BeckettLooseGroup,
     pattern = "*",
