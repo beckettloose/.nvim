@@ -88,3 +88,11 @@ vim.keymap.set("n", "<leader>vlp", "<cmd>CloakPreviewLine<CR>", { desc = "[P]rev
 
 -- Shortcuts for finding next capital letter
 vim.keymap.set("v", ".", [[/\u<CR>h<cmd>nohlsearch<CR>]])
+
+-- I suck at typing lol
+vim.api.nvim_create_user_command('WQ', 'wq', {})
+vim.api.nvim_create_user_command('Wq', 'wq', {})
+vim.api.nvim_create_user_command('W', 'w', {})
+vim.api.nvim_create_user_command('Qa', 'qa', {})
+vim.api.nvim_create_user_command('Q', 'q', {})
+

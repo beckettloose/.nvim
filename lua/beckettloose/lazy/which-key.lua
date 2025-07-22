@@ -47,6 +47,9 @@ return { -- Useful plugin to show you pending keybinds.
             { "<leader>vl", group = "C[l]oak" },
             { "<leader>vl_", hidden = true },
 
+            { "<leader>vb", group = "[B]e" },
+            { "<leader>vb_", hidden = true},
+
             {
                 -- visual mode
                 mode = { "v" },
