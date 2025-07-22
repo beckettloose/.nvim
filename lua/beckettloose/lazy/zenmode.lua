@@ -3,7 +3,28 @@ return {
     config = function()
         vim.keymap.set(
             "n",
-            "<leader>zz",
+            "<leader>zw",
+            function()
+                require("zen-mode").setup({
+                    window = {
+                    width = 140,
+                        options = {},
+                    },
+                })
+                require("zen-mode").toggle()
+                vim.wo.wrap = false
+                vim.wo.number = true
+                vim.wo.rnu = true
+                ColorMyPencils()
+            end,
+            {
+                desc = "Zen Mode [W]ide",
+            }
+        )
+
+        vim.keymap.set(
+            "n",
+            "<leader>zm",
             function()
                 require("zen-mode").setup({
                     window = {
@@ -18,17 +39,38 @@ return {
                 ColorMyPencils()
             end,
             {
-                desc = "[z]en Mode (Wide)",
+                desc = "Zen Mode [M]edium",
             }
         )
 
         vim.keymap.set(
             "n",
-            "<leader>zZ",
+            "<leader>zn",
             function()
                 require("zen-mode").setup({
                     window = {
-                        width = 80,
+                        width = 87,
+                        options = {},
+                    },
+                })
+                require("zen-mode").toggle()
+                vim.wo.wrap = false
+                vim.wo.number = true
+                vim.wo.rnu = true
+                ColorMyPencils()
+            end,
+            {
+                desc = "Zen Mode [n]arrow",
+            }
+        )
+
+        vim.keymap.set(
+            "n",
+            "<leader>zN",
+            function()
+                require("zen-mode").setup({
+                    window = {
+                        width = 83,
                         options = {},
                     },
                 })
@@ -39,7 +81,7 @@ return {
                 ColorMyPencils()
             end,
             {
-                desc = "[Z]en Mode (Narrow)",
+                desc = "Zen Mode [N]arrower",
             }
         )
     end,
