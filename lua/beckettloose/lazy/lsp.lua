@@ -11,7 +11,7 @@ return { -- LSP Configuration & Plugins
                 local lint = require("lint")
 
                 lint.linters_by_ft = {
-                    gitcommit = {"gitlint"},
+                    -- gitcommit = {"gitlint"},
                     sh = {"shellcheck"},
                     bash = {"shellcheck"},
                     zsh = {"zsh"},
