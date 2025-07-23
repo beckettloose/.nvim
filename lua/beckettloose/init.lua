@@ -3,7 +3,7 @@ require("beckettloose.remap")
 require("beckettloose.lazy_init")
 
 local augroup = vim.api.nvim_create_augroup
-local BeckettLooseGroup = augroup("BeckettLoose", {})
+local TrimWhiteSpaceGroup = augroup("TrimWhiteSpace", {})
 
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup("HighlightYank", {})
@@ -32,7 +32,7 @@ autocmd("TextYankPost", {
 
 -- Remove trailing whitespaces before writing buffer
 autocmd({ "BufWritePre" }, {
-    group = BeckettLooseGroup,
+    group = TrimWhiteSpaceGroup,
     pattern = "*",
     command = [[%s/\s\+$//e]],
 })
