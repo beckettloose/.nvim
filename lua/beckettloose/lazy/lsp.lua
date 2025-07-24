@@ -91,19 +91,19 @@ return { -- LSP Configuration & Plugins
                 -- Jump to the definition of the word under your cursor.
                 --  This is where a variable was first declared, or where a function is defined, etc.
                 --  To jump back, press <C-t>.
-                map("gd", require("telescope.builtin").lsp_definitions, "Go to [D]efinition")
+                -- TODO: replace this: map("gd", require("telescope.builtin").lsp_definitions, "Go to [D]efinition")
 
                 -- Find references for the word under your cursor.
-                map("gr", require("telescope.builtin").lsp_references, "Go to [R]eferences")
+                -- TODO: replace this: map("gr", require("telescope.builtin").lsp_references, "Go to [R]eferences")
 
                 -- Jump to the implementation of the word under your cursor.
                 --  Useful when your language has ways of declaring types without an actual implementation.
-                map("gI", require("telescope.builtin").lsp_implementations, "Go to [I]mplementation")
+                -- TODO: replace this: map("gI", require("telescope.builtin").lsp_implementations, "Go to [I]mplementation")
 
                 -- Jump to the type of the word under your cursor.
                 --  Useful when you're not sure what type a variable is and you want to see
                 --  the definition of its *type*, not where it was *defined*.
-                map("gy", require("telescope.builtin").lsp_type_definitions, "Go to T[y]pe")
+                -- TODO: replace this: map("gy", require("telescope.builtin").lsp_type_definitions, "Go to T[y]pe")
 
                 -- Rename the variable under your cursor.
                 --  Most Language Servers support renaming across files, etc.
