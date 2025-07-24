@@ -3,6 +3,9 @@ return {
   ---@module 'oil'
   ---@type oil.SetupOpts
   opts = {
+    win_options = {
+      signcolumn = "yes",
+    },
     keymaps = {
       ["g?"] = { "actions.show_help", mode = "n" },
       ["<CR>"] = "actions.select",
@@ -22,6 +25,12 @@ return {
       ["g\\"] = { "actions.toggle_trash", mode = "n" },
     },
     use_default_keymaps = false, -- <C-p> conflicts with my git search keybind
+    view_options = {
+      show_hidden = true, -- show hidden files by default
+      is_always_hidden = function(name, bufnr)
+        return name == ".." -- never show parent directory in listing
+      end,
+    }
   },
   -- Optional dependencies
   dependencies = { { "echasnovski/mini.icons", opts = {} } },
