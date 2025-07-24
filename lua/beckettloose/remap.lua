@@ -6,8 +6,8 @@ vim.g.maplocalleader = " "
 -- Clear highlight on <Esc> in normal mode
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
--- borrowed from ThePrimeagen
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { desc = "File [E]xplorer" })
+-- vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { desc = "File [E]xplorer" })
+vim.keymap.set("n", "<leader>e", "<cmd>Oil<CR>", { desc = "File [E]xplorer" })
 
 -- Shift selected lines up and down in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
