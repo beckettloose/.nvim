@@ -3,6 +3,7 @@ return {
     opts = {
         picker = {
             sources = {
+                -- custom filetype picker similar to telescope builtin
                 filetypes = {
                     name = "filetypes",
                     format = "text",
@@ -28,8 +29,17 @@ return {
                     end,
                 },
             },
-		},
+        },
         explorer = {},
+        bigfile = {},
+        indent = {
+            only_current = true,
+            scope = {
+                enabled = false
+            }
+        },
+        quickfile = {},
+        -- Need to add: snacks zenmode to replace original zenmode
     },
     keys = {
         { "<leader><space>", function () Snacks.picker.smart() end, desc = "Smart Find Files" },
