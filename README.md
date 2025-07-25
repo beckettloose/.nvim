@@ -43,7 +43,13 @@ My neovim configuration is heavily inspired by ThePrimeagen's nvim config and [n
         - `mini.ai`: Extend and create `a`/`i` textobjects
         - `mini.surround`: Quickly add, remove, and change surrounds like quotes or brackets
         - `mini.statusline`: Statusline integration. Customized to provide minimal diff information about current buffer
-    - `nvim-telescope/telescope.nvim`: Highly extendable fuzzy finder for everything
+    - `stevearc/oil.nvim`: File explorer that lets you edit your filesystem like a regular text buffer
+    - `folke/snacks.nvim`: Another collection of useful plugins
+        - `bigfile`: Disable LSPs and Treesitter when opening very large files
+        - `indent`: Indent level visualization
+        - `picker`: Generic pickers, similar to telescope. Includes a custom filetype picker
+        - `quickfile`: When opening a file directly, open it immediately before loading plugins
+        - `zen`: Disable distractions while editing
     - `folke/todo-comments.nvim`: Highlight and search for `TODO` and similar comments in buffers
     - `nvim-treesitter/nvim-treesitter`: Language parsing and highlighting
     - `folke/trouble.nvim`: A pretty list for diagnostic information
@@ -52,4 +58,3 @@ My neovim configuration is heavily inspired by ThePrimeagen's nvim config and [n
     - `theprimeagen/vim-be-good`: Simple mini-games for practicing vim motions
     - `folke/which-key.nvim`: Shows available keybinds as you type them. Not the most useful for nvim experts, but great for beginners or when you decide to revamp all of your keybindings and can't remember any of them
     - `andrewferrier/wrapping.nvim`: Dynamically switch between soft and hard line wrapping
-    - `folke/zen-mode.nvim`: Simplify your view and remove distractions

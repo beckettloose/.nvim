@@ -1,9 +1,17 @@
 return {
     "folke/snacks.nvim",
     opts = {
+        bigfile = {},
+        indent = {
+            only_current = true,
+            scope = {
+                enabled = false
+            }
+        },
         picker = {
             sources = {
-                -- custom filetype picker similar to telescope builtin
+                -- Custom filetype picker similar to the one included in telescope
+                -- From: https://github.com/folke/snacks.nvim/issues/1738#issuecomment-2841743722
                 filetypes = {
                     name = "filetypes",
                     format = "text",
@@ -30,16 +38,8 @@ return {
                 },
             },
         },
-        explorer = {},
-        bigfile = {},
-        indent = {
-            only_current = true,
-            scope = {
-                enabled = false
-            }
-        },
         quickfile = {},
-        -- Need to add: snacks zenmode to replace original zenmode
+        zen = {},
     },
     keys = {
         { "<leader><space>", function () Snacks.picker.smart() end, desc = "Smart Find Files" },
@@ -50,5 +50,28 @@ return {
         { "<leader>vk", function () Snacks.picker.keymaps() end, desc = "[K]eymap Search" },
         { "<leader>x", function () Snacks.picker.explorer() end, desc = "E[x]plorer" },
         { "<leader>vcl", function () Snacks.picker.filetypes() end, desc = "[L]anguage" },
+        { "<leader>zw", function ()
+            Snacks.zen.zen({
+                win = { style = { width = 140 } },
+            })
+        end, desc = "[W]ide" },
+        { "<leader>zm", function ()
+            Snacks.zen.zen({
+                win = { style = { width = 120 } },
+            })
+        end, desc = "[M]edium" },
+        { "<leader>zn", function ()
+            Snacks.zen.zen({
+                win = { style = { width = 87 } },
+            })
+        end, desc = "[n]arrow" },
+        { "<leader>zN", function ()
+            Snacks.zen.zen({
+                win = { style = {
+                    minimal = true,
+                    width = 80
+                } },
+            })
+        end, desc = "[N]arrower" },
     }
 }
