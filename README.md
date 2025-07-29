@@ -49,6 +49,7 @@ My neovim configuration is heavily inspired by ThePrimeagen's nvim config and [n
         - `indent`: Indent level visualization
         - `picker`: Generic pickers, similar to telescope. Includes a custom filetype picker
         - `quickfile`: When opening a file directly, open it immediately before loading plugins
+        - `toggle`: Various "toggleable" controls for options like spellcheck, line wrap, and whitespace listing
         - `zen`: Disable distractions while editing
     - `folke/todo-comments.nvim`: Highlight and search for `TODO` and similar comments in buffers
     - `nvim-treesitter/nvim-treesitter`: Language parsing and highlighting
@@ -57,4 +58,4 @@ My neovim configuration is heavily inspired by ThePrimeagen's nvim config and [n
     - `tpope/vim-sleuth`: Automatically adjust `shiftwidth` and `expandtab` based on context of current buffer and other files of the same type
     - `theprimeagen/vim-be-good`: Simple mini-games for practicing vim motions
     - `folke/which-key.nvim`: Shows available keybinds as you type them. Not the most useful for nvim experts, but great for beginners or when you decide to revamp all of your keybindings and can't remember any of them
-    - `andrewferrier/wrapping.nvim`: Dynamically switch between soft and hard line wrapping
+    - `andrewferrier/wrapping.nvim`: Dynamically switch between soft and hard line wrapping (debating on removing this depending on whether or not I like the snacks toggle)
