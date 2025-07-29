@@ -61,4 +61,3 @@ My neovim configuration is heavily inspired by ThePrimeagen's nvim config and [n
     - `tpope/vim-sleuth`: Automatically adjust `shiftwidth` and `expandtab` based on context of current buffer and other files of the same type
     - `theprimeagen/vim-be-good`: Simple mini-games for practicing vim motions
     - `folke/which-key.nvim`: Shows available keybinds as you type them. Not the most useful for nvim experts, but great for beginners or when you decide to revamp all of your keybindings and can't remember any of them
-    - `andrewferrier/wrapping.nvim`: Dynamically switch between soft and hard line wrapping (debating on removing this depending on whether or not I like the snacks toggle)
