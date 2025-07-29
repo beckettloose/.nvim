@@ -19,12 +19,15 @@ My neovim configuration is heavily inspired by ThePrimeagen's nvim config and [n
     - Disable special display of whitespace characters
 - Remaps and Keybinds
     - Auto-clear search highlighting on `<Esc>`
-    - Auto-center view when `<C-d>` and `<C-u>` scrolling
-    - Paste from yank register over selected text ("greatest remap ever" - ThePrimeagen)
+    - Shift selected lines up and down with `J` and `K`
+    - Join next line (`J`) without moving cursor
+    - Auto-center view when `<C-d>` and `<C-u>` scrolling and `n`/`N` searching
+    - Paste from yank register ("greatest remap ever" - ThePrimeagen)
     - Yank selection or line to system clipboard
     - Keybind for my tmux-sessionizer script
     - Find and replace word under cursor in entire file
     - Shortcut to `chmod +x` current file
+    - Disable arrow keys to break the habit of using them
 - Plugins
     - `folke/lazy.nvim`: Plugin Manager
     - `williamboman/mason.nvim`: LSP Manager
