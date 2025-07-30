@@ -10,7 +10,7 @@ My neovim configuration is heavily inspired by ThePrimeagen's nvim config and [n
 
 - Autocmds
     - Highlight selection on yank
-    - Remove trailing whitespaces before buffer write
+    - Remove trailing whitespace before buffer write (without overwriting the cursor position or search pattern)
 - Neovim Settings
     - Relative line numbers
     - Disable swap and backup files, enable undofile
@@ -18,13 +18,13 @@ My neovim configuration is heavily inspired by ThePrimeagen's nvim config and [n
     - Highlight results on search
     - Disable special display of whitespace characters
 - Remaps and Keybinds
-    - Auto-clear search highlighting on `<Esc>`
+    - Clear search highlighting on `<Esc>`
     - Shift selected lines up and down with `J` and `K`
     - Join next line (`J`) without moving cursor
     - Auto-center view when `<C-d>` and `<C-u>` scrolling and `n`/`N` searching
     - Paste from yank register ("greatest remap ever" - ThePrimeagen)
-    - Yank selection or line to system clipboard
-    - Keybind for my tmux-sessionizer script
+    - Yank to system clipboard
+    - Keybind for tmux-sessionizer script
     - Find and replace word under cursor in entire file
     - Shortcut to `chmod +x` current file
     - Disable arrow keys to break the habit of using them
@@ -50,7 +50,7 @@ My neovim configuration is heavily inspired by ThePrimeagen's nvim config and [n
     - `folke/snacks.nvim`: Another collection of useful plugins
         - `bigfile`: Disable LSPs and Treesitter when opening very large files
         - `indent`: Indent level visualization
-        - `picker`: Generic pickers, similar to telescope. Includes a custom filetype picker
+        - `picker`: Generic pickers, similar to telescope. Includes a reimplemented filetype picker
         - `quickfile`: When opening a file directly, open it immediately before loading plugins
         - `toggle`: Various "toggleable" controls for options like spellcheck, line wrap, and whitespace listing
         - `zen`: Disable distractions while editing
