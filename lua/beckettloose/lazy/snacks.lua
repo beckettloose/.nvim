@@ -7,7 +7,7 @@ return {
         Snacks.toggle.option("list", { name = "󱁐 List Whitespace" }):map("<leader>vtl")
         Snacks.toggle.option("expandtab", { name = "󰡎 Expand Tab" }):map("<leader>vte")
         Snacks.toggle.treesitter({ name = " Treesitter" }):map("<leader>vtt")
-        Snacks.toggle.indent({ name = "│ Indent" }):map("<leader>vti")
+        Snacks.toggle.indent():map("<leader>vti")
 
         return {
             bigfile = {},
