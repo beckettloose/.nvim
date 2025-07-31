@@ -112,18 +112,17 @@ return {
                     prompt = "Change Indent Size",
                     default = "4",
                 }, function(input)
-                        if input then
-                            if tonumber(input) ~= nil then
-                                vim.opt.shiftwidth = tonumber(input)
-                                vim.opt.tabstop = tonumber(input)
-                                print("Changed indent size to " .. input .. "! =<C-g> to reindent file.")
-                            else
-                                print("Input was not a valid number!")
-                            end
+                    if input then
+                        if tonumber(input) ~= nil then
+                            vim.opt.shiftwidth = tonumber(input)
+                            vim.opt.tabstop = tonumber(input)
+                            print("Changed indent size to " .. input .. "! =<C-g> to reindent file.")
                         else
-                            print("Input was empty!")
+                            print("Input was not a valid number!")
                         end
-                    end)
+                    else
+                    end
+                end)
             end,
             desc = "[I]ndent Size"
         },

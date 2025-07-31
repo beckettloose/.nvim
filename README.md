@@ -28,9 +28,10 @@ My neovim configuration is heavily inspired by ThePrimeagen's nvim config and [n
     - Find and replace word under cursor in entire file
     - Shortcut to `chmod +x` current file
     - Disable arrow keys to break the habit of using them
+    - Re-indent entire buffer without moving cursor
 - Plugins
     - `folke/lazy.nvim`: Plugin Manager
-    - `williamboman/mason.nvim`: LSP Manager
+    - `saghen/blink.cmp`: Performant completions plugin
     - `laytan/cloak.nvim`: Hides values in environment files until manually shown
     - `folke/tokyonight.nvim`: TokyoNight color theme
     - `Bekaboo/deadcolumn.nvim`: Fade in colorcolumn as you type
@@ -42,17 +43,28 @@ My neovim configuration is heavily inspired by ThePrimeagen's nvim config and [n
         - Show line and file blame information
         - Can provide status line integration, but I don't personally use it
     - `ThePrimeagen/harpoon`: Instant file switcher
+    - `folke/lazydev.nvim`: Autoconfigure LuaLS for editing neovim config files
     - `echasnovski/mini.nvim`: A collection of useful plugins
-        - `mini.ai`: Extend and create `a`/`i` textobjects
+        - `mini.ai`: Improved `a`/`i` textobjects
         - `mini.surround`: Quickly add, remove, and change surrounds like quotes or brackets
         - `mini.statusline`: Statusline integration. Customized to provide minimal diff information about current buffer
     - `stevearc/oil.nvim`: File explorer that lets you edit your filesystem like a regular text buffer
     - `folke/snacks.nvim`: Another collection of useful plugins
         - `bigfile`: Disable LSPs and Treesitter when opening very large files
         - `indent`: Indent level visualization
-        - `picker`: Generic pickers, similar to telescope. Includes a reimplemented filetype picker
+        - `input`: Replacement for `vim.ui.input`
+            - Used for my custom indent size adjuster
+        - `picker`: Generic pickers, similar to telescope
+            - Includes custom filetype picker
         - `quickfile`: When opening a file directly, open it immediately before loading plugins
-        - `toggle`: Various "toggleable" controls for options like spellcheck, line wrap, and whitespace listing
+        - `toggle`: Toggle different options on and off using keybinds
+            - `spell`
+            - `wrap`
+            - `list`
+            - `expandtab`
+            - Treesitter highlighting
+            - Indent visualization
+        Various "toggleable" controls for options like spellcheck, line wrap, and whitespace listing
         - `zen`: Disable distractions while editing
     - `folke/todo-comments.nvim`: Highlight and search for `TODO` and similar comments in buffers
     - `nvim-treesitter/nvim-treesitter`: Language parsing and highlighting
