@@ -5,6 +5,7 @@ return {
         Snacks.toggle.option("spell", { name = "󰓆 Spell Checking" }):map("<leader>vts")
         Snacks.toggle.option("wrap", { name = "󰖶 Line Wrapping" }):map("<leader>vtw")
         Snacks.toggle.option("list", { name = "󱁐 List Whitespace" }):map("<leader>vtl")
+        Snacks.toggle.option("expandtab", { name = "󰡎 Expand Tab" }):map("<leader>vte")
         Snacks.toggle.treesitter({ name = " Treesitter" }):map("<leader>vtt")
         Snacks.toggle.indent({ name = "│ Indent" }):map("<leader>vti")
 
@@ -55,14 +56,14 @@ return {
         }
     end,
     keys = {
-        { "<leader><space>", function() Snacks.picker.smart() end,      desc = "Smart Find Files" },
-        { "<leader>,",       function() Snacks.picker.buffers() end,    desc = "Smart Find Buffers" },
-        { "<C-p>",           function() Snacks.picker.git_files() end,  desc = "Find Git Files" },
-        { "<leader>/",       function() Snacks.picker.lines() end,      desc = "Lines" },
-        { "<leader>vh",      function() Snacks.picker.help() end,       desc = "[H]elp Search" },
-        { "<leader>vk",      function() Snacks.picker.keymaps() end,    desc = "[K]eymap Search" },
-        { "<leader>x",       function() Snacks.picker.explorer() end,   desc = "E[x]plorer" },
-        { "<leader>vcl",     function() Snacks.picker.filetypes() end,  desc = "[L]anguage" },
+        { "<leader><space>", function() Snacks.picker.smart() end,     desc = "Smart Find Files" },
+        { "<leader>,",       function() Snacks.picker.buffers() end,   desc = "Smart Find Buffers" },
+        { "<C-p>",           function() Snacks.picker.git_files() end, desc = "Find Git Files" },
+        { "<leader>/",       function() Snacks.picker.lines() end,     desc = "Lines" },
+        { "<leader>vh",      function() Snacks.picker.help() end,      desc = "[H]elp Search" },
+        { "<leader>vk",      function() Snacks.picker.keymaps() end,   desc = "[K]eymap Search" },
+        { "<leader>x",       function() Snacks.picker.explorer() end,  desc = "E[x]plorer" },
+        { "<leader>vcl",     function() Snacks.picker.filetypes() end, desc = "[L]anguage" },
         {
             "<leader>zw",
             function()
@@ -111,18 +112,18 @@ return {
                     prompt = "Change Indent Size",
                     default = "4",
                 }, function(input)
-                    if input then
-                        if tonumber(input) ~= nil then
-                            vim.opt.shiftwidth = tonumber(input)
-                            vim.opt.tabstop = tonumber(input)
-                            print("Changed indent size to " .. input .. "! =G to reindent file.")
+                        if input then
+                            if tonumber(input) ~= nil then
+                                vim.opt.shiftwidth = tonumber(input)
+                                vim.opt.tabstop = tonumber(input)
+                                print("Changed indent size to " .. input .. "! =<C-g> to reindent file.")
+                            else
+                                print("Input was not a valid number!")
+                            end
                         else
-                            print("Input was not a valid number!")
+                            print("Input was empty!")
                         end
-                    else
-                        print("Input was empty!")
-                    end
-                end)
+                    end)
             end,
             desc = "[I]ndent Size"
         },
