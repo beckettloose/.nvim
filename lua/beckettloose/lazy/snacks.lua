@@ -104,5 +104,27 @@ return {
             end,
             desc = "[N]arrower"
         },
+        {
+            "<leader>vci",
+            function()
+                Snacks.input({
+                    prompt = "Change Indent Size",
+                    default = "4",
+                }, function(input)
+                    if input then
+                        if tonumber(input) ~= nil then
+                            vim.opt.shiftwidth = tonumber(input)
+                            vim.opt.tabstop = tonumber(input)
+                            print("Changed indent size to " .. input .. "! =G to reindent file.")
+                        else
+                            print("Input was not a valid number!")
+                        end
+                    else
+                        print("Input was empty!")
+                    end
+                end)
+            end,
+            desc = "[I]ndent Size"
+        },
     },
 }
