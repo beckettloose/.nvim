@@ -63,6 +63,7 @@ return {
         { "<leader>vh",      function() Snacks.picker.help() end,      desc = "[H]elp Search" },
         { "<leader>vk",      function() Snacks.picker.keymaps() end,   desc = "[K]eymap Search" },
         { "<leader>x",       function() Snacks.picker.explorer() end,  desc = "E[x]plorer" },
+        ---@diagnostic disable-next-line: undefined-field
         { "<leader>vcl",     function() Snacks.picker.filetypes() end, desc = "[L]anguage" },
         {
             "<leader>zw",
