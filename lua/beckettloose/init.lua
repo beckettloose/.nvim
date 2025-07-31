@@ -1,5 +1,6 @@
 require("beckettloose.set")
 require("beckettloose.remap")
+require("beckettloose.lsp")
 require("beckettloose.lazy_init")
 
 local augroup = vim.api.nvim_create_augroup
