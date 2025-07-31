@@ -1,4 +1,4 @@
-return { -- Collection of various small independent plugins/modules
+return {
     "echasnovski/mini.nvim",
     config = function()
         -- Better Around/Inside textobjects
@@ -33,7 +33,7 @@ return { -- Collection of various small independent plugins/modules
 
         -- Disable LSP Section in Statusline.
         ---@diagnostic disable-next-line: duplicate-set-field
-        statusline.section_lsp = function ()
+        statusline.section_lsp = function()
             return ""
         end
 
@@ -41,13 +41,13 @@ return { -- Collection of various small independent plugins/modules
         -- TODO: Auto-determine how much of HEAD to show here.
         --
         ---@diagnostic disable-next-line: duplicate-set-field
-        statusline.section_git = function ()
+        statusline.section_git = function()
             return ""
         end
 
         -- Override the function that generates the git diff status.
         ---@diagnostic disable-next-line: duplicate-set-field
-        statusline.section_diff = function (args)
+        statusline.section_diff = function(args)
             if MiniStatusline.is_truncated(args.trunc_width) then return '' end
 
             local summary = vim.b.minidiff_summary_string or vim.b.gitsigns_status

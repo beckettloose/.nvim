@@ -7,7 +7,7 @@ vim.lsp.config.clangd = {
 vim.lsp.config.lua_ls = {
     cmd = { 'lua-language-server' },
     filetypes = { 'lua' },
-    root_markers = { { '.luarc.json', '.luarc.jsonc'}, '.git' },
+    root_markers = { { '.luarc.json', '.luarc.jsonc' }, '.git' },
     settings = {
         Lua = {
             workspace = {
@@ -24,4 +24,4 @@ vim.lsp.config.lua_ls = {
     }
 }
 
-vim.lsp.enable({'clangd', 'lua_ls'})
+vim.lsp.enable({ 'clangd', 'lua_ls' })

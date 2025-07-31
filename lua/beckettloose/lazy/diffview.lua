@@ -1,7 +1,7 @@
 return {
     "sindrets/diffview.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function ()
+    config = function()
         local diffview = require("diffview")
         -- local actions = require("diffview.actions")
 

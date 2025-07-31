@@ -94,4 +94,3 @@ vim.g.netrw_banner = 0
 
 -- Set the initial size of new windows made by netrw
 vim.g.netrw_winsize = 40
-

@@ -36,7 +36,7 @@ autocmd("TextYankPost", {
 autocmd({ "BufWritePre" }, {
     group = TrimWhiteSpaceGroup,
     pattern = "*",
-    callback = function ()
+    callback = function()
         local view = vim.fn.winsaveview()
         local search = vim.fn.getreg("/")
         vim.cmd [[%s/\s\+$//e]]
@@ -44,4 +44,3 @@ autocmd({ "BufWritePre" }, {
         vim.fn.setreg("/", search)
     end,
 })
-

@@ -52,7 +52,8 @@ vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz", { desc = "Next Location Lis
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", { desc = "Prev Location List Item" })
 
 -- Find and replace word under cursor throughout entire file
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace Word Under Cursor" })
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+    { desc = "Replace Word Under Cursor" })
 
 -- Mark current file as executable
 vim.keymap.set("n", "<leader>vmx", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Current File E[x]ecutable" })
@@ -85,7 +86,7 @@ vim.api.nvim_create_user_command('Qa', 'qa', {})
 vim.api.nvim_create_user_command('Q', 'q', {})
 
 -- Reimplement 'K' keymap to have border
-vim.keymap.set('n', 'K', function ()
+vim.keymap.set('n', 'K', function()
     vim.lsp.buf.hover({
         border = 'rounded',
     })
