@@ -90,3 +90,6 @@ vim.keymap.set('n', 'K', function ()
         border = 'rounded',
     })
 end)
+
+-- Mapping to re-indent file without moving cursor
+vim.keymap.set('n', "=<C-g>", "mzgg=G`z", { desc = "Re-indent Entire Buffer" })
