@@ -84,3 +84,9 @@ vim.api.nvim_create_user_command('W', 'w', {})
 vim.api.nvim_create_user_command('Qa', 'qa', {})
 vim.api.nvim_create_user_command('Q', 'q', {})
 
+-- Reimplement 'K' keymap to have border
+vim.keymap.set('n', 'K', function ()
+    vim.lsp.buf.hover({
+        border = 'rounded',
+    })
+end)
