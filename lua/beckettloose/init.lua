@@ -30,10 +30,17 @@ autocmd("TextYankPost", {
     end,
 })
 
--- Remove trailing whitespaces before writing buffer
+-- Remove trailing whitespace before writing buffer, without changing the
+-- cursor position or the search pattern
 autocmd({ "BufWritePre" }, {
     group = TrimWhiteSpaceGroup,
     pattern = "*",
-    command = [[%s/\s\+$//e]],
+    callback = function ()
+        local view = vim.fn.winsaveview()
+        local search = vim.fn.getreg("/")
+        vim.cmd [[%s/\s\+$//e]]
+        vim.fn.winrestview(view)
+        vim.fn.setreg("/", search)
+    end,
 })
 

@@ -5,7 +5,7 @@ return {
 
             require("trouble").setup()
 
-            vim.keymap.set("n", "<leader>vt", function()
+            vim.keymap.set("n", "<leader>t", function()
                 require("trouble").toggle("diagnostics")
             end, { desc = "[T]rouble" })
 

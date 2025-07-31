@@ -10,7 +10,7 @@ My neovim configuration is heavily inspired by ThePrimeagen's nvim config and [n
 
 - Autocmds
     - Highlight selection on yank
-    - Remove trailing whitespaces before buffer write
+    - Remove trailing whitespace before buffer write (without overwriting the cursor position or search pattern)
 - Neovim Settings
     - Relative line numbers
     - Disable swap and backup files, enable undofile
@@ -18,13 +18,16 @@ My neovim configuration is heavily inspired by ThePrimeagen's nvim config and [n
     - Highlight results on search
     - Disable special display of whitespace characters
 - Remaps and Keybinds
-    - Auto-clear search highlighting on `<Esc>`
-    - Auto-center view when `<C-d>` and `<C-u>` scrolling
-    - Paste from yank register over selected text ("greatest remap ever" - ThePrimeagen)
-    - Yank selection or line to system clipboard
-    - Keybind for my tmux-sessionizer script
+    - Clear search highlighting on `<Esc>`
+    - Shift selected lines up and down with `J` and `K`
+    - Join next line (`J`) without moving cursor
+    - Auto-center view when `<C-d>` and `<C-u>` scrolling and `n`/`N` searching
+    - Paste from yank register ("greatest remap ever" - ThePrimeagen)
+    - Yank to system clipboard
+    - Keybind for tmux-sessionizer script
     - Find and replace word under cursor in entire file
     - Shortcut to `chmod +x` current file
+    - Disable arrow keys to break the habit of using them
 - Plugins
     - `folke/lazy.nvim`: Plugin Manager
     - `williamboman/mason.nvim`: LSP Manager
@@ -47,8 +50,9 @@ My neovim configuration is heavily inspired by ThePrimeagen's nvim config and [n
     - `folke/snacks.nvim`: Another collection of useful plugins
         - `bigfile`: Disable LSPs and Treesitter when opening very large files
         - `indent`: Indent level visualization
-        - `picker`: Generic pickers, similar to telescope. Includes a custom filetype picker
+        - `picker`: Generic pickers, similar to telescope. Includes a reimplemented filetype picker
         - `quickfile`: When opening a file directly, open it immediately before loading plugins
+        - `toggle`: Various "toggleable" controls for options like spellcheck, line wrap, and whitespace listing
         - `zen`: Disable distractions while editing
     - `folke/todo-comments.nvim`: Highlight and search for `TODO` and similar comments in buffers
     - `nvim-treesitter/nvim-treesitter`: Language parsing and highlighting
@@ -57,4 +61,3 @@ My neovim configuration is heavily inspired by ThePrimeagen's nvim config and [n
     - `tpope/vim-sleuth`: Automatically adjust `shiftwidth` and `expandtab` based on context of current buffer and other files of the same type
     - `theprimeagen/vim-be-good`: Simple mini-games for practicing vim motions
     - `folke/which-key.nvim`: Shows available keybinds as you type them. Not the most useful for nvim experts, but great for beginners or when you decide to revamp all of your keybindings and can't remember any of them
-    - `andrewferrier/wrapping.nvim`: Dynamically switch between soft and hard line wrapping
