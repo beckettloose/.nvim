@@ -1,5 +1,6 @@
 return {
     "sindrets/diffview.nvim",
+    event = "VimEnter",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
         local diffview = require("diffview")

@@ -1,5 +1,6 @@
 return {
     "nvim-treesitter/nvim-treesitter",
+    event = "VimEnter",
     build = ":TSUpdate",
     opts = {
         ensure_installed = { "bash", "c", "diff", "html", "lua", "luadoc", "markdown", "vim", "vimdoc" },

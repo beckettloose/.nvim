@@ -1,6 +1,6 @@
 return {
     "folke/snacks.nvim",
-    event = "BufEnter",
+    event = "VimEnter",
     opts = function()
         Snacks.toggle.option("spell", { name = "󰓆 Spell Checking" }):map("<leader>vts")
         Snacks.toggle.option("wrap", { name = "󰖶 Line Wrapping" }):map("<leader>vtw")

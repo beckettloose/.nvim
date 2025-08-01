@@ -1,6 +1,6 @@
 return {
     'mfussenegger/nvim-lint',
-    event = "BufEnter",
+    event = "BufWritePre",
     config = function()
         local lint = require('lint')
         lint.linters_by_ft = {

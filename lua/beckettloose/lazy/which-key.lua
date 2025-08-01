@@ -49,6 +49,7 @@ return {                -- Useful plugin to show you pending keybinds.
 
             { "<leader>vb",  group = "[B]e" },
             { "<leader>vb_", hidden = true },
+            { "<leader>vbg", desc = "Vim Be [G]ood" },
 
             { "<leader>vt",  group = "[T]oggle" },
             { "<leader>vt_", hidden = true },

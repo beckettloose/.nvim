@@ -1,5 +1,7 @@
 return {
     "theprimeagen/vim-be-good",
+    -- Don't load until we invoke the keybind
+    keys = "<leader>vbg",
 
     dependencies = {
         "nvim-lua/plenary.nvim"

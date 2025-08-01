@@ -72,7 +72,9 @@ vim.opt.timeoutlen = 300
 vim.opt.list = false
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
-vim.opt.colorcolumn = "81"
+-- Set in deadcolumn.lua. Since the plugin is lazy loadaed, we need to hide the
+-- colorcolumn until the after its setup function is called.
+vim.opt.colorcolumn = "0"
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
