@@ -58,11 +58,6 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- Mark current file as executable
 vim.keymap.set("n", "<leader>vmx", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Current File E[x]ecutable" })
 
--- We do a little trolling
-vim.keymap.set("n", "<leader>v0r", "<cmd>CellularAutomaton make_it_rain<CR>", { desc = "Make it [R]ain" })
-vim.keymap.set("n", "<leader>v0s", "<cmd>CellularAutomaton scramble<CR>", { desc = "[S]cramble" })
-vim.keymap.set("n", "<leader>v0g", "<cmd>CellularAutomaton game_of_life<CR>", { desc = "[G]ame of Life" })
-
 -- Disable arrow keys to break the habit of using them
 vim.keymap.set({ "n", "i" }, "<left>", '<cmd> echo "Use h to move!!"<CR>')
 vim.keymap.set({ "n", "i" }, "<right>", '<cmd> echo "Use l to move!!"<CR>')

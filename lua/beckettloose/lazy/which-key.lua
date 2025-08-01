@@ -31,6 +31,9 @@ return {                -- Useful plugin to show you pending keybinds.
 
             { "<leader>v0",  group = "Cellular Automaton" },
             { "<leader>v0_", hidden = true },
+            { "<leader>v0r", desc = "Make it [R]ain" },
+            { "<leader>v0s", desc = "[S]cramble" },
+            { "<leader>v0g", desc = "[G]ame of Life" },
 
             { "<leader>p",   group = "Gre[p]" },
             { "<leader>p_",  hidden = true },
