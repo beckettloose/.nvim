@@ -1,7 +1,15 @@
 vim.lsp.config.clangd = {
-    cmd = { 'clangd', '--background-index' },
-    root_markers = { 'compile_commands.json', 'compile_flags.txt' },
-    filetypes = { 'c', 'cpp' },
+    cmd = { 'clangd' },
+    root_markers = {
+        '.clangd',
+        '.clang-tidy',
+        '.clang-format',
+        'compile_commands.json',
+        'compile_flags.txt',
+        'configure.ac',
+        '.git',
+    },
+    filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda' },
 }
 
 vim.lsp.config.lua_ls = {
@@ -24,4 +32,10 @@ vim.lsp.config.lua_ls = {
     }
 }
 
-vim.lsp.enable({ 'clangd', 'lua_ls' })
+vim.lsp.config.cmake_language_server = {
+    cmd = { 'cmake-language-server' },
+    filetypes = { 'cmake' },
+    root_markers = { 'build', '.git' },
+}
+
+vim.lsp.enable({ 'clangd', 'lua_ls', 'cmake_language_server' })
