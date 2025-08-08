@@ -29,9 +29,6 @@ vim.opt.undofile = true
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 
--- Sync clipboard between OS and Neovim
--- vim.opt.clipboard = "unnamedplus"
-
 -- Enable break indent
 vim.opt.breakindent = true
 

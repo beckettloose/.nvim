@@ -1,16 +1,15 @@
 return {
     "Bekaboo/deadcolumn.nvim",
-    event = "InsertEnter",
+    event = "VimEnter",
     config = function()
         local deadcolumn = require('deadcolumn')
         deadcolumn.setup({
             scope = 'line',
-            -- modes...
             blending = {
                 threshold = 0.75,
                 alpha = 0.4,
                 colorcode = '#454545',
-                -- hlgroup = { 'Normal', 'bg' },
+                hlgroup = { 'Normal', 'bg' },
             },
             warning = {
                 alpha = 0.4,
@@ -22,5 +21,4 @@ return {
 
         vim.opt.colorcolumn = "81"
     end,
-
 }
