@@ -1,5 +1,5 @@
 vim.lsp.config.clangd = {
-    cmd = { 'clangd' },
+    cmd = { 'clangd', '--header-insertion=never' },
     root_markers = {
         '.clangd',
         '.clang-tidy',
