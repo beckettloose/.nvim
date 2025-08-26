@@ -23,8 +23,8 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
--- Enable mouse mode, can be useful for resizing splits
--- vim.opt.mouse = "a"
+-- Disable mouse mode
+vim.opt.mouse = ""
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
