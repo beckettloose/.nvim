@@ -17,8 +17,8 @@ return {                -- Useful plugin to show you pending keybinds.
             { "<leader>h",   group = "Git [H]unk" },
             { "<leader>h_",  hidden = true },
 
-            { "<leader>d",   group = "[D]iff View" },
-            { "<leader>d_",  hidden = true },
+            { "<leader>i",   group = "D[i]ffView" },
+            { "<leader>i_",  hidden = true },
 
             { "[",           group = "Previous" },
             { "[_",          hidden = true },

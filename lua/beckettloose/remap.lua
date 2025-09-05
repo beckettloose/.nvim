@@ -1,12 +1,13 @@
 -- remap.lua: Remap keys for neovim. Borrowed from kickstart.nvim and ThePrimeagen
 
+-- Set <leader> key to spacebar
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Clear highlight on <Esc> in normal mode
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
--- vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { desc = "File [E]xplorer" })
+-- Shortcut to open file explorer
 vim.keymap.set("n", "<leader>e", "<cmd>Oil<CR>", { desc = "File [E]xplorer" })
 
 -- Shift selected lines up and down in visual mode
@@ -16,32 +17,29 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- Join next line without moving cursor
 vim.keymap.set("n", "J", "mzJ`z")
 
--- Center line after <C-u>/<C-d> scroll and n/N searching
+-- Center cursor vertically when <C-u>/<C-d> scrolling and n/N searching
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+-- Pastes from yank register. Allows you to paste over a visual selection
+-- without clobbering the register being pasted from.
 -- "greatest remap ever" - ThePrimeagen
--- pastes from yank register. allows you to paste multiple times without
--- overwriting the contents of the register being pasted from
 vim.keymap.set("x", "<leader>p", [["0p]], { desc = "[p]aste from Yank Register" })
--- vim.keymap.set("x", "<leader>p", [["_dP]]) -- This is a slightly different version of the same thing
 
+-- Yanks line or selection to system clipboard
 -- "next greatest remap ever" - ThePrimeagen
--- Yanks selection or line to system clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "[y]ank Selection to Clipboard" })
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "[Y]ank Line to Clipboard" })
 
--- vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
-
--- "This is going to get me cancelled" - ThePrimeagen
--- vim.keymap.set("i", "<C-c>", "<Esc>")
+-- Delete without sending text to any register
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- Unmap Q
 vim.keymap.set("n", "Q", "<nop>")
 
--- Open tmux sessionizer
+-- Call tmux-sessionizer script
 vim.keymap.set("n", "<C-f>", '<cmd>silent !tmux neww -n sessionizer "tmux-sessionizer 1"<CR>')
 
 -- Format buffer
