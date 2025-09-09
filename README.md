@@ -44,6 +44,8 @@ My neovim configuration is heavily inspired by ThePrimeagen's nvim config and [n
         - Can provide status line integration, but I don't personally use it
     - `ThePrimeagen/harpoon`: Instant file switcher
     - `folke/lazydev.nvim`: Autoconfigure LuaLS for editing neovim config files
+    - `mfussenegger/nvim-lint`: Async linter interface for neovim
+    - `mason-org/mason.nvim`: Portable package manager for LSPs, linters, and formatters
     - `echasnovski/mini.nvim`: A collection of useful plugins
         - `mini.ai`: Improved `a`/`i` textobjects
         - `mini.surround`: Quickly add, remove, and change surrounds like quotes or brackets
