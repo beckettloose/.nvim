@@ -1,4 +1,5 @@
--- remap.lua: Remap keys for neovim. Borrowed from kickstart.nvim and ThePrimeagen
+-- remap.lua
+-- Custom key remaps and shortcuts
 
 -- Set <leader> key to spacebar
 vim.g.mapleader = " "
@@ -23,12 +24,12 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- Pastes from yank register. Allows you to paste over a visual selection
+-- Paste from yank register. Allows you to paste over a visual selection
 -- without clobbering the register being pasted from.
 -- "greatest remap ever" - ThePrimeagen
 vim.keymap.set("x", "<leader>p", [["0p]], { desc = "[p]aste from Yank Register" })
 
--- Yanks line or selection to system clipboard
+-- Yank line or selection to system clipboard
 -- "next greatest remap ever" - ThePrimeagen
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "[y]ank Selection to Clipboard" })
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "[Y]ank Line to Clipboard" })

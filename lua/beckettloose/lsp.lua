@@ -1,3 +1,6 @@
+-- lsp.lua
+-- LSP setup and configuration
+
 vim.lsp.config.clangd = {
     cmd = { 'clangd', '--header-insertion=never' },
     root_markers = {

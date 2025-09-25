@@ -8,16 +8,16 @@ My neovim configuration is heavily inspired by ThePrimeagen's nvim config and [n
 
 ## Cool features
 
-- Autocmds
+- Autocmds (`autocmd.lua`)
     - Highlight selection on yank
     - Remove trailing whitespace before buffer write (without overwriting the cursor position or search pattern)
-- Neovim Settings
+- Neovim Settings (`set.lua`)
     - Relative line numbers
     - Disable swap and backup files, enable undofile
     - Default to case insensitive searching
     - Highlight results on search
     - Disable special display of whitespace characters
-- Remaps and Keybinds
+- Remaps and Keybinds (`remap.lua`)
     - Clear search highlighting on `<Esc>`
     - Shift selected lines up and down with `J` and `K`
     - Join next line (`J`) without moving cursor

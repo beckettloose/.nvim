@@ -1,4 +1,5 @@
--- set.lua: global settings for neovim. adapted from ThePrimeagen
+-- set.lua
+-- Global settings and configuration
 
 -- vim.opt.guicursor = ""
 
