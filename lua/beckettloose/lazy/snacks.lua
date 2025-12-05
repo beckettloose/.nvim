@@ -1,6 +1,7 @@
 return {
     "folke/snacks.nvim",
-    event = "VimEnter",
+    lazy = false,
+    priority = 1000,
     opts = function()
         Snacks.toggle.option("spell", { name = "󰓆 Spell Checking" }):map("<leader>vts")
         Snacks.toggle.option("wrap", { name = "󰖶 Line Wrapping" }):map("<leader>vtw")
@@ -12,6 +13,7 @@ return {
 
         return {
             bigfile = {},
+            explorer = {},
             indent = {
                 indent = {
                     enabled = true,
@@ -21,6 +23,7 @@ return {
                     enabled = false,
                 },
             },
+            input = {},
             picker = {
                 sources = {
                     -- Custom filetype picker similar to the one included in telescope
@@ -52,6 +55,7 @@ return {
                 },
             },
             quickfile = {},
+            scope = {},
             toggle = {},
             zen = {},
         }
