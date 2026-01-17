@@ -4,9 +4,21 @@ My [neovim](https://github.com/neovim/neovim) configuration files. This was orig
 
 ## Design and Function
 
-My neovim configuration is heavily inspired by ThePrimeagen's nvim config and [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim). Each plugin is given its own file which is then loaded at startup by `lazy_init.lua`.
+My neovim configuration is heavily inspired by ThePrimeagen's nvim config and [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).
 
-## Cool features
+This repo is symlinked into my neovim config directory (`~/.config/nvim/`) using GNU Stow. The initial entrypoint for all Lua code is `init.lua`, which begins the loading process by requiring the `beckettloose` module whose entrypoint is `lua/beckettloose/init.lua`. Once invoked, this kicks off the main loading process which occurs in the following order:
+
+1. Require `set.lua`: Configure basic neovim settings
+2. Require `remap.lua`: Set up custom keybinds
+3. Require `autocmd.lua`: Set up autocmds
+4. Require `lsp.lua`: Configure and enable LSPs
+5. Require `lazy_init.lua`: Bootstrap lazy.nvim and begin loading plugins
+
+At the end of `lazy_init.lua`, plugins are loaded from the `lazy/` directory. The files in this directory are regular Lua files that simply return one or more lazy plugin spec(s). See the official [plugin spec](https://lazy.folke.io/spec) for more details.
+
+## Features
+
+My neovim config contains many useful features and plugins. A mostly complete list of examples is included below.
 
 - Autocmds (`autocmd.lua`)
     - Highlight selection on yank
@@ -32,7 +44,7 @@ My neovim configuration is heavily inspired by ThePrimeagen's nvim config and [n
 - Plugins
     - `folke/lazy.nvim`: Plugin Manager
     - `saghen/blink.cmp`: Performant completions plugin
-    - `laytan/cloak.nvim`: Hides values in environment files until manually shown
+    - `laytan/cloak.nvim`: Hides values in environment files until manually shown (currently disabled)
     - `folke/tokyonight.nvim`: TokyoNight color theme
     - `Bekaboo/deadcolumn.nvim`: Fade in colorcolumn as you type
     - `sindrets/diffview.nvim`: Git diff and file history UI. Also great for resolving merge conflicts
@@ -66,7 +78,6 @@ My neovim configuration is heavily inspired by ThePrimeagen's nvim config and [n
             - `expandtab`
             - Treesitter highlighting
             - Indent visualization
-        Various "toggleable" controls for options like spellcheck, line wrap, and whitespace listing
         - `zen`: Disable distractions while editing
     - `folke/todo-comments.nvim`: Highlight and search for `TODO` and similar comments in buffers
     - `nvim-treesitter/nvim-treesitter`: Language parsing and highlighting
