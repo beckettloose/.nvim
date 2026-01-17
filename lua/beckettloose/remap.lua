@@ -64,10 +64,10 @@ vim.keymap.set({ "n", "i" }, "<up>", '<cmd> echo "Use k to move!!"<CR>')
 vim.keymap.set({ "n", "i" }, "<down>", '<cmd> echo "Use j to move!!"<CR>')
 
 -- Cloak.nvim key bindings --
-vim.keymap.set("n", "<leader>vlt", "<cmd>CloakToggle<CR>", { desc = "[T]oggle" })
-vim.keymap.set("n", "<leader>vld", "<cmd>CloakDisable<CR>", { desc = "[D]isable" })
-vim.keymap.set("n", "<leader>vle", "<cmd>CloakEnable<CR>", { desc = "[E]nable" })
-vim.keymap.set("n", "<leader>vlp", "<cmd>CloakPreviewLine<CR>", { desc = "[P]review Line" })
+-- vim.keymap.set("n", "<leader>vlt", "<cmd>CloakToggle<CR>", { desc = "[T]oggle" })
+-- vim.keymap.set("n", "<leader>vld", "<cmd>CloakDisable<CR>", { desc = "[D]isable" })
+-- vim.keymap.set("n", "<leader>vle", "<cmd>CloakEnable<CR>", { desc = "[E]nable" })
+-- vim.keymap.set("n", "<leader>vlp", "<cmd>CloakPreviewLine<CR>", { desc = "[P]review Line" })
 
 -- visual jump to next capital letter
 vim.keymap.set("v", ".", [[/\u<CR>h<cmd>nohlsearch<CR>]])

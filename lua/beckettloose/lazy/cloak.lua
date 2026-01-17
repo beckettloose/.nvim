@@ -1,5 +1,6 @@
 return {
     "laytan/cloak.nvim",
+    enabled = false,
     event = "BufEnter .env*",
     config = function()
         require("cloak").setup({
