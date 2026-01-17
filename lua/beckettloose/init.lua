@@ -3,6 +3,6 @@
 
 require("beckettloose.set")
 require("beckettloose.remap")
+require("beckettloose.autocmd")
 require("beckettloose.lsp")
 require("beckettloose.lazy_init")
-require("beckettloose.autocmd")
