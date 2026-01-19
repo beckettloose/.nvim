@@ -1,5 +1,6 @@
 return {
     "ThePrimeagen/harpoon",
+    enabled = false,
     event = "VimEnter",
     branch = "harpoon2",
     dependencies = { "nvim-lua/plenary.nvim" },
@@ -17,6 +18,7 @@ return {
         end, { desc = "[S]how Harpoon List" })
 
 
+        -- NOTE: these conflict with my quick window switching shortcuts
         vim.keymap.set("n", "<C-h>", function()
             harpoon:list():select(1)
         end, { desc = "Select Harpoon Item 1" })

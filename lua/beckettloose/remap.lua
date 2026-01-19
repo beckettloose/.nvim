@@ -63,6 +63,12 @@ vim.keymap.set({ "n", "i" }, "<right>", '<cmd> echo "Use l to move!!"<CR>')
 vim.keymap.set({ "n", "i" }, "<up>", '<cmd> echo "Use k to move!!"<CR>')
 vim.keymap.set({ "n", "i" }, "<down>", '<cmd> echo "Use j to move!!"<CR>')
 
+-- easier window navigation
+vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Move focus to the left window' })
+vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move focus to the right window' })
+vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Move focus to the lower window' })
+vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Move focus to the upper window' })
+
 -- Cloak.nvim key bindings --
 -- vim.keymap.set("n", "<leader>vlt", "<cmd>CloakToggle<CR>", { desc = "[T]oggle" })
 -- vim.keymap.set("n", "<leader>vld", "<cmd>CloakDisable<CR>", { desc = "[D]isable" })
