@@ -56,6 +56,7 @@ My neovim config contains many useful features and plugins. A mostly complete li
         - Can provide status line integration, but I don't personally use it
     - `ThePrimeagen/harpoon`: Instant file switcher
     - `folke/lazydev.nvim`: Autoconfigure LuaLS for editing neovim config files
+    - `kdheepak/lazygit.nvim`: Open lazygit inside nvim
     - `mfussenegger/nvim-lint`: Async linter interface for neovim
     - `mason-org/mason.nvim`: Portable package manager for LSPs, linters, and formatters
     - `echasnovski/mini.nvim`: A collection of useful plugins
