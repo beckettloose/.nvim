@@ -24,8 +24,7 @@ This repo is symlinked into `~/.config/nvim/` using GNU Stow. The initial entryp
 1. Require `set.lua`: Configure basic neovim settings
 2. Require `remap.lua`: Set up custom keybinds
 3. Require `autocmd.lua`: Set up autocmds
-4. Require `lsp.lua`: Configure and enable LSPs
-5. Require `lazy_init.lua`: Bootstrap lazy.nvim and load plugins
+4. Require `lazy_init.lua`: Bootstrap lazy.nvim and load plugins
 
 At the end of `lazy_init.lua`, plugins are loaded from the `lazy/` directory. The files in this directory are regular Lua files that simply return one or more lazy plugin spec(s). See the official [plugin spec](https://lazy.folke.io/spec) for more details.
 
@@ -67,10 +66,12 @@ My neovim config contains many useful features and plugins. A mostly complete li
         - Quickly navigate between hunks
         - Show line and file blame information
         - Can provide status line integration, but I don't personally use it
-    - `ThePrimeagen/harpoon`: Instant file switcher
+    - `ThePrimeagen/harpoon`: Instant file switcher (currently disabled)
     - `folke/lazydev.nvim`: Autoconfigure LuaLS for editing neovim config files
     - `kdheepak/lazygit.nvim`: Open lazygit inside nvim
     - `mfussenegger/nvim-lint`: Async linter interface for neovim
+    - `neovim/nvim-lspconfig`: Sane defaults for LSP configuration
+    - `j-hui/fidget.nvim`: LSP status updates
     - `mason-org/mason.nvim`: Portable package manager for LSPs, linters, and formatters
     - `echasnovski/mini.nvim`: A collection of useful plugins
         - `mini.ai`: Improved `a`/`i` textobjects
