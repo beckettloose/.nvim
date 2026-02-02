@@ -22,7 +22,7 @@ return {
                 end
 
                 map('<leader>cr', vim.lsp.buf.rename, '[r]ename')
-                map('<leader>ca', vim.lsp.buf.code_action, '[a]ctions')
+                map('<leader>cn', vim.lsp.buf.code_action, 'Actio[n]s')
                 map('gd', vim.lsp.buf.definition, '[d]efinition')
                 map('gD', vim.lsp.buf.declaration, '[D]eclaration')
             end
