@@ -1,7 +1,9 @@
 return {
+    -- Sane defaults for LSP configuration
     "neovim/nvim-lspconfig",
     event = "VimEnter",
     dependencies = {
+        -- LSP status update widget
         {'j-hui/fidget.nvim', opts = {}}
     },
     config = function ()

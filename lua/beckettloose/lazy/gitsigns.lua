@@ -1,4 +1,5 @@
 return {
+    -- Signcolumn support and quick navigation for git changes
     "lewis6991/gitsigns.nvim",
     event = "VimEnter",
     config = function()

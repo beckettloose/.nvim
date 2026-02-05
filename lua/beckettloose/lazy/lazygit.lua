@@ -1,4 +1,5 @@
 return {
+    -- Allows lazygit to be opened within neovim
     "kdheepak/lazygit.nvim",
     lazy = true,
     cmd = {

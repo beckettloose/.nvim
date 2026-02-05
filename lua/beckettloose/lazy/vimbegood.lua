@@ -1,4 +1,5 @@
 return {
+    -- Simple mini-games for practicing vim motions
     "theprimeagen/vim-be-good",
     -- Don't load until we invoke the keybind
     keys = "<leader>vbg",

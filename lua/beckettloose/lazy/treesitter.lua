@@ -1,4 +1,5 @@
 return {
+    -- Language parsing and syntax highlighting
     "nvim-treesitter/nvim-treesitter",
     branch = "master",
     event = "VimEnter",

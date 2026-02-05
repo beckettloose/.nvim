@@ -1,4 +1,5 @@
 return {
+    -- Obscure values in .env files
     "laytan/cloak.nvim",
     enabled = false,
     event = "BufEnter .env*",

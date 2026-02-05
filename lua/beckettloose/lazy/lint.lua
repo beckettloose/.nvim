@@ -1,4 +1,5 @@
 return {
+    -- Async linter interface
     'mfussenegger/nvim-lint',
     event = "BufWritePre",
     config = function()

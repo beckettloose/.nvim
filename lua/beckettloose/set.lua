@@ -6,11 +6,11 @@
 -- Disable starter screen
 vim.opt.shortmess:append("I")
 
--- Enable line numbering
+-- Enable relative line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
 
--- Indentation Settings
+-- Set default indent to 4 spaces
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -19,10 +19,13 @@ vim.opt.expandtab = true
 -- Disable smartindent to help with LSPs
 vim.opt.smartindent = false
 
--- Disable text wrapping
+-- Disable text wrapping by default. Can still be enabled with 'vtw' toggle
 vim.opt.wrap = false
 
--- Disable swap and backup, enable undofile
+-- Ensure wrapped text remains indented
+vim.opt.breakindent = true
+
+-- Disable swap and backup files, enable undofile
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
@@ -31,56 +34,48 @@ vim.opt.undofile = true
 -- Disable mouse mode
 vim.opt.mouse = ""
 
--- Don't show the mode, since it's already in the status line
+-- Don't print mode changes, since the mode is already in the status line
 vim.opt.showmode = false
-
--- Enable break indent
-vim.opt.breakindent = true
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
--- Set highlight on search, but clear on pressing <Esc> in normal mode.
--- This keymapping can be found remap.lua
+-- Highlight search results
 vim.opt.hlsearch = true
 -- vim.opt.incsearch = true
 
+-- Enables 24-bit RGB color support
 vim.opt.termguicolors = true
 
--- Increase number of lines kept when scrolling
-vim.opt.scrolloff = 8 -- was 10
+-- Increase number of lines shown when scrolling
+vim.opt.scrolloff = 8
 
--- Keep signcolumn on by default
+-- Enable signcolumn
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
--- Decrease update time
--- Update Time: time before CursorHold autocmds are executed.
--- Also technically a timer for writing swapfile but that's disabled here
+-- Decrease time before CursorHold autocmds are executed.
+-- Also technically a timer for writing the swapfile but that's disabled above
 vim.opt.updatetime = 50 -- old value: 250
 
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
 vim.opt.timeoutlen = 300
 
--- Configure how new splits should be opened
--- vim.opt.splitright = true
--- vim.opt.splitbelow = true
-
 -- Sets how neovim will display certain whitespace characters in the editor
--- See `:help 'list'`
 -- See `:help 'listchars'`
 vim.opt.list = false
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
--- Set in deadcolumn.lua. Since the plugin is lazy loadaed, we need to hide the
--- colorcolumn until the after its setup function is called.
+-- Colorcolumn is configured by deadcolumn.lua. Since the plugin is lazy
+-- loadaed, we need to hide the colorcolumn until the after its setup function
+-- runs.
 vim.opt.colorcolumn = "0"
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
 
--- Show which line your cursor is on
+-- Highlight the line your cursor is on
 vim.opt.cursorline = true
 

@@ -1,4 +1,5 @@
 return {
+    -- Instant file switcher
     "ThePrimeagen/harpoon",
     enabled = false,
     event = "VimEnter",

@@ -1,4 +1,5 @@
 return {
+    -- Git diff, history, and merge views
     "sindrets/diffview.nvim",
     event = "VimEnter",
     dependencies = { "nvim-tree/nvim-web-devicons" },

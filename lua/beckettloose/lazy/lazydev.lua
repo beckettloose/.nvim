@@ -1,4 +1,5 @@
 return {
+	-- Autoconfigure LSP for editing neovim configuration files
 	"folke/lazydev.nvim",
 	ft = "lua", -- only load on lua files
 	opts = {

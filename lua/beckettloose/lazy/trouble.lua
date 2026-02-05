@@ -1,4 +1,5 @@
 return {
+    -- A pretty list for displaying diagnostic results
     "folke/trouble.nvim",
     event = "VimEnter",
     config = function()

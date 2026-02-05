@@ -1,4 +1,5 @@
 return {
+    -- Another collection of useful plugins
     "folke/snacks.nvim",
     lazy = false,
     priority = 1000,
@@ -12,8 +13,11 @@ return {
         Snacks.toggle.indent():map("<leader>vti")
 
         return {
+            -- Disable LSPs and Treesitter in very large files
             bigfile = {},
+            -- File tree in sidebar
             explorer = {},
+            -- Indent level visualization
             indent = {
                 indent = {
                     enabled = true,
@@ -23,7 +27,9 @@ return {
                     enabled = false,
                 },
             },
+            -- Replacement for vim.ui.input
             input = {},
+            -- Generic pickers, similar to telescope
             picker = {
                 sources = {
                     -- Custom filetype picker similar to the one included in telescope
@@ -54,13 +60,17 @@ return {
                     },
                 },
             },
+            -- When opening a file directly, load it immediately
             quickfile = {},
             scope = {},
+            -- Toggle different options on and off using keybinds
             toggle = {},
+            -- Disable distractions while editing
             zen = {},
         }
     end,
     keys = {
+        -- Picker keybinds
         { "<leader><space>", function() Snacks.picker.smart() end,     desc = "Smart Find Files" },
         { "<leader>,",       function() Snacks.picker.buffers() end,   desc = "Smart Find Buffers" },
         { "<C-p>",           function() Snacks.picker.git_files() end, desc = "Find Git Files" },
@@ -70,6 +80,7 @@ return {
         { "<leader>x",       function() Snacks.picker.explorer() end,  desc = "E[x]plorer" },
         ---@diagnostic disable-next-line: undefined-field
         { "<leader>vcl",     function() Snacks.picker.filetypes() end, desc = "[L]anguage" },
+        -- Zen mode keybinds
         {
             "<leader>zw",
             function()
@@ -111,6 +122,7 @@ return {
             end,
             desc = "[N]arrower"
         },
+        -- Custom input box to change indent size
         {
             "<leader>vci",
             function()

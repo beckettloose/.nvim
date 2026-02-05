@@ -1,4 +1,5 @@
 return {
+    -- Presents the buffer's undo history as a navigable tree
     "mbbill/undotree",
     event = "VimEnter",
     config = function()

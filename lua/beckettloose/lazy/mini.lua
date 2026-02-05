@@ -1,4 +1,5 @@
 return {
+    -- A collection of useful plugins
     "nvim-mini/mini.nvim",
     event = "VimEnter",
     config = function()
@@ -46,7 +47,7 @@ return {
             return ""
         end
 
-        -- Override the function that generates the git diff status.
+        -- Custom git diff info in statusline
         ---@diagnostic disable-next-line: duplicate-set-field
         statusline.section_diff = function(args)
             if MiniStatusline.is_truncated(args.trunc_width) then return '' end

@@ -1,4 +1,5 @@
 return {
+    -- Buffer-based editable file explorer
     'stevearc/oil.nvim',
     ---@module 'oil'
     ---@type oil.SetupOpts

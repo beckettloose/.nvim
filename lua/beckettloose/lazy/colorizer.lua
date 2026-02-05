@@ -1,4 +1,5 @@
 return {
+    -- Highlight color codes in buffers
     "norcalli/nvim-colorizer.lua",
     event = "VimEnter",
     config = function ()

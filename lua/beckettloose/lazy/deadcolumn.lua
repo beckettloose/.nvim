@@ -1,4 +1,5 @@
 return {
+    -- Fade in colorcolumn as you type
     "Bekaboo/deadcolumn.nvim",
     event = "VimEnter",
     config = function()

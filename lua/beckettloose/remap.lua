@@ -1,5 +1,5 @@
 -- remap.lua
--- Custom key remaps and shortcuts
+-- Custom remaps and macros
 
 -- Set <leader> key to spacebar
 vim.g.mapleader = " "
@@ -8,10 +8,11 @@ vim.g.maplocalleader = " "
 -- Clear highlight on <Esc> in normal mode
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
--- Shortcut to open file explorer
+-- Open file explorer (originally netrw, now oil.nvim)
 vim.keymap.set("n", "<leader>e", "<cmd>Oil<CR>", { desc = "File [E]xplorer" })
 
--- Shift selected lines up and down in visual mode
+-- Shift visual lines up and down. Similar to <M-up>/<M-down> in VS Code.
+-- Note that this will add a bunch of undo stages if used frequently
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
@@ -24,12 +25,13 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- Paste from yank register. Allows you to paste over a visual selection
--- without clobbering the register being pasted from.
+-- Paste from yank register. Since this does not use the delete register, its
+-- content will not be replaced by the overwritten text and can therefore be
+-- reused many times.
 -- "greatest remap ever" - ThePrimeagen
 vim.keymap.set("x", "<leader>p", [["0p]], { desc = "[p]aste from Yank Register" })
 
--- Yank line or selection to system clipboard
+-- Yank line or visual range to system clipboard
 -- "next greatest remap ever" - ThePrimeagen
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "[y]ank Selection to Clipboard" })
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "[Y]ank Line to Clipboard" })
@@ -66,28 +68,29 @@ vim.keymap.set({ "n", "i" }, "<right>", '<cmd> echo "Use l to move!!"<CR>')
 vim.keymap.set({ "n", "i" }, "<up>", '<cmd> echo "Use k to move!!"<CR>')
 vim.keymap.set({ "n", "i" }, "<down>", '<cmd> echo "Use j to move!!"<CR>')
 
--- easier window navigation
+-- Easier window navigation
 vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Move focus to the upper window' })
 
--- visual jump to next capital letter
+-- Visual mode to next capital letter
+-- I mostly end up using this to work with camel case text
 vim.keymap.set("v", ".", [[/\u<CR>h<cmd>nohlsearch<CR>]])
 
--- I suck at typing lol
+-- I suck at typing lol (fixes common typos of :w/q/wq/qa)
 vim.api.nvim_create_user_command('WQ', 'wq', {})
 vim.api.nvim_create_user_command('Wq', 'wq', {})
 vim.api.nvim_create_user_command('W', 'w', {})
 vim.api.nvim_create_user_command('Qa', 'qa', {})
 vim.api.nvim_create_user_command('Q', 'q', {})
 
--- Reimplement 'K' keymap to have border
+-- Add border to 'K' hover window
 vim.keymap.set('n', 'K', function()
     vim.lsp.buf.hover({
         border = 'rounded',
     })
 end)
 
--- Mapping to re-indent file without moving cursor
+-- Re-indent file without moving cursor
 vim.keymap.set('n', "=<C-g>", "mzgg=G`z", { desc = "Re-indent Entire Buffer" })
