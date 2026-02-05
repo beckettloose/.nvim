@@ -40,6 +40,9 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 -- Unmap Q
 vim.keymap.set("n", "Q", "<nop>")
 
+-- Unmap F1
+vim.keymap.set({ 'n', 'v', 'i' }, "<F1>", "<nop>")
+
 -- Call tmux-sessionizer script
 vim.keymap.set("n", "<C-f>", '<cmd>silent !tmux neww -n sessionizer "tmux-sessionizer 1"<CR>')
 
