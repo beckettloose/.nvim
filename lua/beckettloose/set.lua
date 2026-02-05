@@ -84,17 +84,3 @@ vim.opt.inccommand = "split"
 -- Show which line your cursor is on
 vim.opt.cursorline = true
 
-
---- NETRW OPTIONS ---
-
--- Open files without splitting or tabbing
-vim.g.netrw_browse_split = 0
-
--- Configure netrw buffer to have relative line numbers
-vim.g.netrw_bufsettings = 'noma nomod rnu nobl nowrap ro'
-
--- Disable top banner
-vim.g.netrw_banner = 0
-
--- Set the initial size of new windows made by netrw
-vim.g.netrw_winsize = 40
