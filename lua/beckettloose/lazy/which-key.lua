@@ -58,6 +58,9 @@ return {
             { "<leader>vt",  group = "[T]oggle" },
             { "<leader>vt_", hidden = true },
 
+            { "<leader>m", group = "[M]arkview" },
+            { "<leader>m_", hidden = true },
+
             {
                 -- visual mode
                 mode = { "v" },
