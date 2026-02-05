@@ -69,12 +69,6 @@ vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move focus to the right window'
 vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Move focus to the upper window' })
 
--- Cloak.nvim key bindings --
--- vim.keymap.set("n", "<leader>vlt", "<cmd>CloakToggle<CR>", { desc = "[T]oggle" })
--- vim.keymap.set("n", "<leader>vld", "<cmd>CloakDisable<CR>", { desc = "[D]isable" })
--- vim.keymap.set("n", "<leader>vle", "<cmd>CloakEnable<CR>", { desc = "[E]nable" })
--- vim.keymap.set("n", "<leader>vlp", "<cmd>CloakPreviewLine<CR>", { desc = "[P]review Line" })
-
 -- visual jump to next capital letter
 vim.keymap.set("v", ".", [[/\u<CR>h<cmd>nohlsearch<CR>]])
 
