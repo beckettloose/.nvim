@@ -57,6 +57,7 @@ My neovim config contains many useful features and plugins. A mostly complete li
     - `folke/lazy.nvim`: Plugin Manager
     - `saghen/blink.cmp`: Performant completions plugin
     - `laytan/cloak.nvim`: Hides values in environment files until manually shown (currently disabled)
+    - `norcalli/nvim-colorizer.lua`: Highlights color codes in buffers
     - `folke/tokyonight.nvim`: TokyoNight color theme
     - `Bekaboo/deadcolumn.nvim`: Fade in colorcolumn as you type
     - `sindrets/diffview.nvim`: Git diff and file history UI. Also great for resolving merge conflicts
