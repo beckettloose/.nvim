@@ -61,6 +61,9 @@ return {
             { "<leader>m", group = "[M]arkview" },
             { "<leader>m_", hidden = true },
 
+            { "<leader>l", group = "[L]azy" },
+            { "<leader>l_", hidden = true },
+
             {
                 -- visual mode
                 mode = { "v" },

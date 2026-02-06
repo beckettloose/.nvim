@@ -94,3 +94,9 @@ end)
 
 -- Re-indent file without moving cursor
 vim.keymap.set('n', "=<C-g>", "mzgg=G`z", { desc = "Re-indent Entire Buffer" })
+
+-- Open Lazy Plugin Manager
+vim.keymap.set('n', "<leader>ll", "<cmd>Lazy<CR>", { desc = "[L]azy.nvim" })
+
+-- Open Mason.nvim
+vim.keymap.set('n', "<leader>lm", "<cmd>Mason<CR>", { desc = "[M]ason.nvim" })
