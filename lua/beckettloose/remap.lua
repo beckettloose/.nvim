@@ -13,17 +13,17 @@ vim.keymap.set("n", "<leader>e", "<cmd>Oil<CR>", { desc = "File [E]xplorer" })
 
 -- Shift visual lines up and down. Similar to <M-up>/<M-down> in VS Code.
 -- Note that this will add a bunch of undo stages if used frequently
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Shift Lines Down" })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Shift Lines Up" })
 
 -- Join next line without moving cursor
-vim.keymap.set("n", "J", "mzJ`z")
+vim.keymap.set("n", "J", "mzJ`z", { desc = "[J]oin Next Line" })
 
 -- Center cursor vertically when <C-u>/<C-d> scrolling and n/N searching
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Page Down" })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Page Up" })
+vim.keymap.set("n", "n", "nzzzv", { desc = "Next Result" })
+vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous Result" })
 
 -- Paste from yank register. Since this does not use the delete register, its
 -- content will not be replaced by the overwritten text and can therefore be
@@ -37,7 +37,7 @@ vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "[y]ank Selection to
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "[Y]ank Line to Clipboard" })
 
 -- Delete without sending text to any register
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Silent [D]elete" })
 
 -- Unmap Q
 vim.keymap.set("n", "Q", "<nop>")
@@ -46,7 +46,7 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set({ 'n', 'v', 'i' }, "<F1>", "<nop>")
 
 -- Call tmux-sessionizer script
-vim.keymap.set("n", "<C-f>", '<cmd>silent !tmux neww -n sessionizer "tmux-sessionizer 1"<CR>')
+vim.keymap.set("n", "<C-f>", '<cmd>silent !tmux neww -n sessionizer "tmux-sessionizer 1"<CR>', { desc = "Tmux Sessionizer" })
 
 -- Format buffer
 vim.keymap.set("n", "<leader><C-f>", vim.lsp.buf.format, { desc = "[F]ormat Buffer" })
@@ -63,20 +63,20 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>vmx", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Current File E[x]ecutable" })
 
 -- Disable arrow keys to break the habit of using them
-vim.keymap.set({ "n", "i" }, "<left>", '<cmd> echo "Use h to move!!"<CR>')
-vim.keymap.set({ "n", "i" }, "<right>", '<cmd> echo "Use l to move!!"<CR>')
-vim.keymap.set({ "n", "i" }, "<up>", '<cmd> echo "Use k to move!!"<CR>')
-vim.keymap.set({ "n", "i" }, "<down>", '<cmd> echo "Use j to move!!"<CR>')
+vim.keymap.set({ "n", "v", "i" }, "<left>", '<cmd> echo "Use h to move!!"<CR>')
+vim.keymap.set({ "n", "v", "i" }, "<right>", '<cmd> echo "Use l to move!!"<CR>')
+vim.keymap.set({ "n", "v", "i" }, "<up>", '<cmd> echo "Use k to move!!"<CR>')
+vim.keymap.set({ "n", "v", "i" }, "<down>", '<cmd> echo "Use j to move!!"<CR>')
 
 -- Easier window navigation
-vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Move focus to the upper window' })
+vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Focus Left Window' })
+vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Focus Right Window' })
+vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Focus Lower Window' })
+vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Focus Upper Window' })
 
 -- Visual mode to next capital letter
 -- I mostly end up using this to work with camel case text
-vim.keymap.set("v", ".", [[/\u<CR>h<cmd>nohlsearch<CR>]])
+vim.keymap.set("v", ".", [[/\u<CR>h<cmd>nohlsearch<CR>]], { desc = "Before Next Uppercase" })
 
 -- I suck at typing lol (fixes common typos of :w/q/wq/qa)
 vim.api.nvim_create_user_command('WQ', 'wq', {})
@@ -90,7 +90,7 @@ vim.keymap.set('n', 'K', function()
     vim.lsp.buf.hover({
         border = 'rounded',
     })
-end)
+end, { desc = "LSP Hover Info" })
 
 -- Re-indent file without moving cursor
 vim.keymap.set('n', "=<C-g>", "mzgg=G`z", { desc = "Re-indent Entire Buffer" })

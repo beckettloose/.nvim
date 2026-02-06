@@ -64,6 +64,31 @@ return {
             { "<leader>l", group = "[L]azy" },
             { "<leader>l_", hidden = true },
 
+            { "<leader>c", group = "[c]ode" },
+            { "<leader>c_", hidden = true },
+
+            -- hide arrow key remaps
+            {
+                mode = { "n", "v", "i" },
+                { "<up>", hidden = true },
+                { "<down>", hidden = true },
+                { "<left>", hidden = true },
+                { "<right>", hidden = true },
+            },
+
+            -- hide esc and Q remaps
+            {
+                mode = { "n" },
+                { "<esc>", hidden = true },
+                { "Q", hidden = true },
+            },
+
+            -- hide F1 remap
+            {
+                mode = { "n", "v", "i" },
+                { "<F1>", hidden = true },
+            },
+
             {
                 -- visual mode
                 mode = { "v" },
