@@ -48,8 +48,8 @@ return {
             { "<leader>vm",  group = "[M]ark" },
             { "<leader>vm_", hidden = true },
 
-            { "<leader>vl",  group = "C[l]oak" },
-            { "<leader>vl_", hidden = true },
+            -- { "<leader>vl",  group = "C[l]oak" },
+            -- { "<leader>vl_", hidden = true },
 
             { "<leader>vb",  group = "[B]e" },
             { "<leader>vb_", hidden = true },
