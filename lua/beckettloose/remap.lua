@@ -74,9 +74,17 @@ vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Focus Right Window' })
 vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Focus Lower Window' })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Focus Upper Window' })
 
--- Visual mode to next capital letter
--- I mostly end up using this to work with camel case text
-vim.keymap.set("v", ".", [[/\u<CR>h<cmd>nohlsearch<CR>]], { desc = "Before Next Uppercase" })
+-- Visual mode before next capital letter
+-- I use this to help select subwords of camel case strings
+vim.keymap.set("v", ".", function ()
+    local search = vim.fn.getreg("/")
+    vim.fn.setreg("/", "\\u")
+    vim.api.nvim_feedkeys('nh', 'v', false)
+    vim.schedule(function ()
+        vim.cmd.nohlsearch()
+        vim.fn.setreg("/", search)
+    end)
+end, { desc = "Before Next Uppercase" })
 
 -- I suck at typing lol (fixes common typos of :w/q/wq/qa)
 vim.api.nvim_create_user_command('WQ', 'wq', {})
