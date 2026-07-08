@@ -12,7 +12,7 @@ autocmd("TextYankPost", {
     callback = function()
         vim.hl.hl_op({
             higroup = "IncSearch",
-            timeout = 60,
+            timeout = 90,
         })
     end,
 })
