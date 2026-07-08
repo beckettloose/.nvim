@@ -1,15 +1,11 @@
 -- autocmd.lua
 -- Set up neovim autocommands
 
--- Create augroup for trim whitespace command
-local augroup = vim.api.nvim_create_augroup
-local TrimWhiteSpaceGroup = augroup("TrimWhiteSpace", {})
-
--- Create augroup for highlight on yank command
 local autocmd = vim.api.nvim_create_autocmd
-local yank_group = augroup("HighlightYank", {})
+local augroup = vim.api.nvim_create_augroup
 
--- Highlight selection on yank
+-- Highlight text on yank
+local yank_group = augroup("HighlightYank", {})
 autocmd("TextYankPost", {
     group = yank_group,
     pattern = "*",
@@ -23,8 +19,9 @@ autocmd("TextYankPost", {
 
 -- Remove trailing whitespace before writing buffer, without changing the cursor
 -- position or the search pattern
+local trim_whitespace_group = augroup("TrimWhiteSpace", {})
 autocmd({ "BufWritePre" }, {
-    group = TrimWhiteSpaceGroup,
+    group = trim_whitespace_group,
     pattern = "*",
     callback = function()
         local view = vim.fn.winsaveview()
