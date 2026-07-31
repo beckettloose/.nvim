@@ -48,8 +48,8 @@ return {
             { "<leader>vm",  group = "[M]ark" },
             { "<leader>vm_", hidden = true },
 
-            { "<leader>vl",  group = "C[l]oak" },
-            { "<leader>vl_", hidden = true },
+            -- { "<leader>vl",  group = "C[l]oak" },
+            -- { "<leader>vl_", hidden = true },
 
             { "<leader>vb",  group = "[B]e" },
             { "<leader>vb_", hidden = true },
@@ -60,6 +60,34 @@ return {
 
             { "<leader>m", group = "[M]arkview" },
             { "<leader>m_", hidden = true },
+
+            { "<leader>l", group = "[L]azy" },
+            { "<leader>l_", hidden = true },
+
+            { "<leader>c", group = "[c]ode" },
+            { "<leader>c_", hidden = true },
+
+            -- hide arrow key remaps
+            {
+                mode = { "n", "v", "i" },
+                { "<up>", hidden = true },
+                { "<down>", hidden = true },
+                { "<left>", hidden = true },
+                { "<right>", hidden = true },
+            },
+
+            -- hide esc and Q remaps
+            {
+                mode = { "n" },
+                { "<esc>", hidden = true },
+                { "Q", hidden = true },
+            },
+
+            -- hide F1 remap
+            {
+                mode = { "n", "v", "i" },
+                { "<F1>", hidden = true },
+            },
 
             {
                 -- visual mode

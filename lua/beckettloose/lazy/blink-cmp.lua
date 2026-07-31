@@ -3,7 +3,7 @@ return {
     'saghen/blink.cmp',
     event = { "InsertEnter", "CmdlineEnter"},
     -- optional: provides snippets for the snippet source
-    dependencies = { 'rafamadriz/friendly-snippets' },
+    -- dependencies = { 'rafamadriz/friendly-snippets' },
     -- use a release tag to download pre-built binaries
     version = '1.*',
     -- AND/OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
@@ -42,7 +42,8 @@ return {
         -- elsewhere in your config, without redefining it, due to `opts_extend`
         sources = {
             -- default = { 'lsp', 'path', 'snippets', 'buffer' },
-            default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
+            -- default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
+            default = { 'lazydev', 'lsp', 'path', 'buffer' },
             providers = {
                 lazydev = {
                     name = "LazyDev",

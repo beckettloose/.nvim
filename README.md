@@ -1,43 +1,43 @@
-# .nvim
+# beckettloose/.nvim
 
-My [neovim](https://github.com/neovim/neovim) configuration files. This was originally part of my dotfiles repo but I moved it out to track the changes separately.
+My [neovim](https://github.com/neovim/neovim) configuration files. This repository is a submodule in my primary [dotfiles repository](https://github.com/beckettloose/.dotfiles).
 
 ## Goals
 
-- Be feature rich, but stay faithful to vim motions
+- Be feature rich while staying faithful to vim motions
     - Add useful macros and plugins
-    - Don't overwrite regular vim keybinds
+    - Don't overwrite regular vim keybinds with new functions
 - Be fast and reliable
-    - Use stable and trusted plugins
-    - Lazy-load plugins to decrease startup time
+    - Use stable and well supported plugins
+    - Lazy-load plugins where possible to decrease startup time
     - Use snacks.nvim bigfile to handle large files efficiently
 - Stay organized and easy to understand
     - Split up configuration into many small files
-    - Keep documentation updated
+    - Keep inline documentation inside each configuration file
 
 ## Design and Function
 
-My neovim configuration was heavily inspired by ThePrimeagen's nvim config and originally adapted from [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).
+My Neovim configuration was heavily inspired by ThePrimeagen's nvim config and originally adapted from [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).
 
-This repo is symlinked into `~/.config/nvim/` using GNU Stow. The initial entrypoint for all Lua code is `init.lua`, which begins the loading process by requiring the `beckettloose` module whose entrypoint is `lua/beckettloose/init.lua`. Once invoked, this kicks off the main loading process which occurs in the following order:
+This repository is symlinked into `~/.config/nvim/` using GNU Stow. The initial entrypoint for all Lua code is `init.lua`, which begins the loading process by requiring the `beckettloose` module whose entrypoint is `lua/beckettloose/init.lua`. Once invoked, this kicks off the main loading process which occurs in the following order:
 
-1. Require `set.lua`: Configure basic neovim settings
-2. Require `remap.lua`: Set up custom keybinds
-3. Require `autocmd.lua`: Set up autocmds
+1. Require `set.lua`: Configure global default settings
+2. Require `remap.lua`: Set up custom remaps and macros
+3. Require `autocmd.lua`: Set up autocommands
 4. Require `lazy_init.lua`: Bootstrap lazy.nvim and load plugins
 
-At the end of `lazy_init.lua`, plugins are loaded from the `lazy/` directory. The files in this directory are regular Lua files that simply return one or more lazy plugin spec(s). See the official [plugin spec](https://lazy.folke.io/spec) for more details.
+At the end of `lazy_init.lua`, plugins are loaded from the `lazy/` directory. The files in this directory are regular Lua files that return one or more lazy plugin spec(s). See the official [plugin spec](https://lazy.folke.io/spec) for more details.
 
 ## Features
 
-My neovim config contains many useful features and plugins. A mostly complete list of examples is included below.
+My Neovim configuration contains many useful features and plugins. A mostly complete list of examples is included below.
 
-- Autocmds (`autocmd.lua`)
-    - Highlight selection on yank
-    - Remove trailing whitespace before buffer write (without overwriting the cursor position or search pattern)
 - Neovim Settings (`set.lua`)
+    - Disable startup screen
     - Relative line numbers
+    - Default indent of 4 spaces
     - Disable swap and backup files, enable undofile
+    - Disable mouse mode
     - Default to case insensitive searching
     - Highlight results on search
     - Disable special display of whitespace characters
@@ -48,12 +48,19 @@ My neovim config contains many useful features and plugins. A mostly complete li
     - Auto-center view when `<C-d>` and `<C-u>` scrolling and `n`/`N` searching
     - Paste from yank register ("greatest remap ever" - ThePrimeagen)
     - Yank to system clipboard
-    - Keybind for tmux-sessionizer script
+    - Silent delete (doesn't update delete register)
+    - Un-map `Q` and `<F1>`
+    - Keybind for `tmux-sessionizer` script
     - Find and replace word under cursor in entire file
-    - Shortcut to `chmod +x` current file
+    - `chmod +x` current file
     - Disable arrow keys to break the habit of using them
+    - Easier window navigation with Ctrl+HJKL
+    - Fix common typos of (:w/q/wq/qa)
     - Re-indent entire buffer without moving cursor
-- Plugins
+- Autocmds (`autocmd.lua`)
+    - Highlight yanked text on yank
+    - Remove trailing whitespace before buffer write (without overwriting the cursor position or search pattern)
+- Plugins (`lua/beckettloose/lazy/`)
     - `folke/lazy.nvim`: Plugin Manager
     - `saghen/blink.cmp`: Performant completions plugin
     - `laytan/cloak.nvim`: Hides values in environment files until manually shown (currently disabled)
@@ -73,6 +80,7 @@ My neovim config contains many useful features and plugins. A mostly complete li
     - `mfussenegger/nvim-lint`: Async linter interface for neovim
     - `neovim/nvim-lspconfig`: Sane defaults for LSP configuration
     - `j-hui/fidget.nvim`: LSP status updates
+    - `OXY2DEV/markview.nvim`: More accurate markdown previews inside neovim
     - `mason-org/mason.nvim`: Portable package manager for LSPs, linters, and formatters
     - `echasnovski/mini.nvim`: A collection of useful plugins
         - `mini.ai`: Improved `a`/`i` textobjects
@@ -96,7 +104,6 @@ My neovim config contains many useful features and plugins. A mostly complete li
             - Indent visualization
         - `zen`: Disable distractions while editing
     - `folke/todo-comments.nvim`: Highlight and search for `TODO` and similar comments in buffers
-    - `nvim-treesitter/nvim-treesitter`: Language parsing and highlighting
     - `folke/trouble.nvim`: A pretty list for diagnostic information
     - `mbbill/undotree`: Presents the current buffer's undo history as a navigable tree. Much harder to accidentally lose intermediate versions of a file like traditional undo/redo. Definitely one of my favorite plugins
     - `tpope/vim-sleuth`: Automatically adjust `shiftwidth` and `expandtab` based on context of current buffer and other files of the same type
