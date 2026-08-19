@@ -40,8 +40,6 @@ return {
         end
 
         -- Disable git head in Statusline.
-        -- TODO: Auto-determine how much of HEAD to show here.
-        --
         ---@diagnostic disable-next-line: duplicate-set-field
         statusline.section_git = function()
             return ""
