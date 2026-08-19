@@ -54,9 +54,10 @@ return {
 
             local summary = vim.b.minidiff_summary_string or vim.b.gitsigns_status
             if summary == nil then return '' end
+            if summary == '' then return '' end
 
-            local icon = args.icon or ''
-            return icon .. ' ' .. (summary == '' and '' or summary)
+            local icon = args.icon or ' '
+            return icon .. '' .. summary
         end
         -- ... and there is more!
         --  Check out: https://github.com/echasnovski/mini.nvim
