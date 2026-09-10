@@ -6,6 +6,9 @@
 -- Disable starter screen
 vim.opt.shortmess:append("I")
 
+-- Ignore modelines
+vim.opt.modeline = false
+
 -- Enable relative line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
