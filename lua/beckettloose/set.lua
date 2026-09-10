@@ -25,7 +25,10 @@ vim.opt.smartindent = false
 -- Disable text wrapping by default. Can still be enabled with 'vtw' toggle
 vim.opt.wrap = false
 
--- Ensure wrapped text remains indented
+-- When text wrapping is on, don't split words
+vim.opt.linebreak = true
+
+-- When text wrapping is on, preserve indentation
 vim.opt.breakindent = true
 
 -- Disable swap and backup files, enable undofile
